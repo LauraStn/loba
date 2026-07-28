@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mulish, Poppins } from "next/font/google";
+import { Mulish, Poppins, Story_Script } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { SITE_URL } from "@/content/site";
@@ -18,6 +18,13 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+const storyScript = Story_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-story-script",
   display: "swap",
 });
 
@@ -60,8 +67,11 @@ const LocaleLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   if (!isLocale(locale)) notFound();
 
   return (
-    <html lang={locale} className={`${mulish.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+    <html
+      lang={locale}
+      className={`${mulish.variable} ${poppins.variable} ${storyScript.variable}`}
+    >
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 };

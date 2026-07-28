@@ -15,6 +15,7 @@
   --color-cyan-vivid: #0cdff2;
   --color-danger: #c0264a;
   --color-gray-50: #f7f7fa;
+  --color-gray-100: #eef0f4;
   --color-gray-200: #e2e2e9;
   --color-gray-400: #a0aec0;
   --color-gray-500: #718096;
@@ -23,6 +24,7 @@
 
   --font-sans: var(--font-mulish), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-poppins), var(--font-mulish), sans-serif;
+  --font-script: var(--font-story-script), cursive;
 
   --text-*: initial;
   --text-display: 58px;
@@ -99,14 +101,14 @@
   );
   --gradient-hero: radial-gradient(
     120% 90% at 85% 10%,
-    color-mix(in srgb, var(--color-cyan) 12%, transparent) 0%,
-    color-mix(in srgb, var(--color-teal) 6%, transparent) 45%,
+    color-mix(in srgb, var(--color-cyan) 20%, transparent) 0%,
+    color-mix(in srgb, var(--color-teal) 10%, transparent) 45%,
     #fafbfc 100%
   );
   --gradient-works: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-cyan) 9%, transparent) 0%,
-    color-mix(in srgb, var(--color-teal) 5%, transparent) 100%
+    color-mix(in srgb, var(--color-cyan) 18%, transparent) 0%,
+    color-mix(in srgb, var(--color-teal) 10%, transparent) 100%
   );
   --gradient-contact: linear-gradient(
     135deg,

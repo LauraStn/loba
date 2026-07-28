@@ -70,7 +70,7 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
 
   const localeSwitcher = (
     <div
-      className="flex items-center gap-1 rounded-pill border border-gray-200 bg-gray-50 p-1"
+      className="flex items-center gap-1 rounded-pill border border-gray-400 bg-gray-50 p-1"
       role="group"
       aria-label={labels.languageLabel}
     >
@@ -98,7 +98,7 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
   );
 
   const wordmark = (
-    <span className="bg-contact bg-clip-text font-display text-note font-semibold tracking-[0.14em] text-transparent">
+    <span className="bg-contact bg-clip-text font-script px-2 text-title text-transparent">
       {labels.wordmark}
     </span>
   );

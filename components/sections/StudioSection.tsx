@@ -16,7 +16,7 @@ export const StudioSection = ({ content }: StudioSectionProps) => (
   <section
     id={SECTION_IDS.studio}
     aria-labelledby={TITLE_ID}
-    className="scroll-mt-21 border-b border-gray-200 bg-gray-50"
+    className="scroll-mt-21 border-b border-gray-200 bg-gray-100"
   >
     <div
       className={`${CONTAINER_CLASS} grid min-h-dvh content-center items-center gap-14 py-16 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:py-24`}
@@ -57,7 +57,7 @@ export const StudioSection = ({ content }: StudioSectionProps) => (
           {content.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-pill border border-gray-200 bg-white px-3.5 py-1.5 text-micro text-gray-700"
+              className="rounded-pill border border-gray-400 bg-white px-3.5 py-1.5 text-micro text-gray-700"
             >
               {tag}
             </li>
