@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Mulish, Poppins, Story_Script } from "next/font/google";
 import { notFound } from "next/navigation";
 
+import { InlineScript } from "@/components/layout/InlineScript";
+import { ThemeSync } from "@/components/layout/ThemeSync";
 import { SITE_URL } from "@/content/site";
 import { LOCALES, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -27,6 +29,8 @@ const storyScript = Story_Script({
   variable: "--font-story-script",
   display: "swap",
 });
+
+const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark")}}catch(e){}})()`;
 
 export const generateStaticParams = () =>
   LOCALES.map((locale) => ({ locale }));
@@ -69,9 +73,17 @@ const LocaleLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {
   return (
     <html
       lang={locale}
+      data-theme="light"
+      suppressHydrationWarning
       className={`${mulish.variable} ${poppins.variable} ${storyScript.variable}`}
     >
-      <body suppressHydrationWarning>{children}</body>
+      <head>
+        <InlineScript html={THEME_INIT_SCRIPT} />
+      </head>
+      <body suppressHydrationWarning>
+        <ThemeSync locale={locale} />
+        {children}
+      </body>
     </html>
   );
 };

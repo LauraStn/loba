@@ -21,7 +21,7 @@ const HomePage = async ({ params }: PageProps<"/[locale]">) => {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-40 focus:rounded-field focus:bg-white focus:px-4 focus:py-2 focus:text-body focus:text-navy focus:shadow-card"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-40 focus:rounded-field focus:bg-white focus:px-4 focus:py-2 focus:text-body focus:text-navy focus:shadow-card dark:focus:bg-dark-surface dark:focus:text-dark-ink"
       >
         {dictionary.nav.skipToContent}
       </a>

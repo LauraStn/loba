@@ -42,7 +42,7 @@ export const ServicesSection = ({ content }: ServicesSectionProps) => (
   <section
     id={SECTION_IDS.services}
     aria-labelledby={TITLE_ID}
-    className="scroll-mt-21 border-y border-gray-200 bg-contact"
+    className="scroll-mt-21 border-y border-gray-200 bg-contact dark:border-dark-border"
   >
     <div
       className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
@@ -64,7 +64,7 @@ export const ServicesSection = ({ content }: ServicesSectionProps) => (
           return (
             <li
               key={serviceId}
-              className="rounded-card border border-gray-200 bg-white p-7 shadow-card transition-all duration-[180ms] ease-out hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-card border border-gray-200 bg-white p-7 shadow-card transition-all duration-[180ms] ease-out hover:-translate-y-0.5 hover:shadow-card-hover dark:border-dark-border dark:bg-dark-surface"
             >
               <span className="bg-accent-surface grid size-10 place-items-center rounded-field">
                 <Icon
@@ -74,10 +74,10 @@ export const ServicesSection = ({ content }: ServicesSectionProps) => (
                   aria-hidden="true"
                 />
               </span>
-              <h3 className="mt-4.5 font-display text-card font-bold text-navy">
+              <h3 className="mt-4.5 font-display text-card font-bold text-navy dark:text-dark-ink">
                 {service.title}
               </h3>
-              <p className="mt-2 text-body text-gray-600">
+              <p className="mt-2 text-body text-gray-600 dark:text-dark-ink-muted">
                 {service.description}
               </p>
             </li>

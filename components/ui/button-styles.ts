@@ -15,8 +15,8 @@ const VARIANTS: Record<ButtonVariant, string> = {
   primary:
     "bg-button text-navy shadow-cta hover:brightness-[0.95] hover:shadow-cta-hover",
   secondary:
-    "border-2 border-accent bg-white text-accent hover:bg-accent/[0.07]",
-  ghost: "text-accent hover:bg-accent/[0.07]",
+    "border-2 border-accent bg-white text-accent hover:bg-accent/[0.07] dark:bg-dark-surface dark:text-cyan dark:border-cyan dark:hover:bg-white/[0.06]",
+  ghost: "text-accent hover:bg-accent/[0.07] dark:text-cyan dark:hover:bg-white/[0.06]",
 };
 
 type ButtonStyleOptions = {

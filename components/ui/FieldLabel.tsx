@@ -21,7 +21,7 @@ export const FieldLabel = ({
       </span>
     ) : null}
     {!required && optionalText ? (
-      <span className="font-normal text-gray-500">{` (${optionalText})`}</span>
+      <span className="font-normal text-gray-500 dark:text-dark-ink-faint">{` (${optionalText})`}</span>
     ) : null}
   </label>
 );

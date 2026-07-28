@@ -17,7 +17,7 @@ export const WorksSection = ({ content }: WorksSectionProps) => (
   <section
     id={SECTION_IDS.works}
     aria-labelledby={TITLE_ID}
-    className="bg-works scroll-mt-21 border-b border-gray-200"
+    className="bg-works dark:bg-works-dark scroll-mt-21 border-b border-gray-200 dark:border-dark-border"
   >
     <div
       className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
@@ -25,13 +25,13 @@ export const WorksSection = ({ content }: WorksSectionProps) => (
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <h2
           id={TITLE_ID}
-          className="font-display text-heading-sm font-extrabold text-navy md:text-heading"
+          className="font-display text-heading-sm font-extrabold text-navy md:text-heading dark:text-dark-ink"
         >
           {content.title}
         </h2>
         <Link
           href={`#${SECTION_IDS.works}`}
-          className="inline-flex items-center gap-1.5 text-body font-bold text-accent transition-colors hover:text-navy"
+          className="inline-flex items-center gap-1.5 text-body font-bold text-accent transition-colors hover:text-navy dark:text-cyan dark:hover:text-dark-ink"
         >
           {content.seeAll}
           <ArrowRight size={16} strokeWidth={2} aria-hidden="true" />
@@ -52,10 +52,10 @@ export const WorksSection = ({ content }: WorksSectionProps) => (
                   className="object-cover"
                 />
               </div>
-              <h3 className="mt-3.5 font-display text-intro font-bold text-navy">
+              <h3 className="mt-3.5 font-display text-intro font-bold text-navy dark:text-dark-ink">
                 {details.title}
               </h3>
-              <p className="mt-1 text-meta text-gray-500">{details.category}</p>
+              <p className="mt-1 text-meta text-gray-500 dark:text-dark-ink-faint">{details.category}</p>
             </li>
           );
         })}

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark ([data-theme="dark"] &);
+
 @theme {
   --color-*: initial;
   --color-inherit: inherit;
@@ -21,6 +23,15 @@
   --color-gray-500: #718096;
   --color-gray-600: #4a5568;
   --color-gray-700: #2d3748;
+
+  --color-dark-bg: #071013;
+  --color-dark-surface: #0d1a1f;
+  --color-dark-surface-alt: #122229;
+  --color-dark-border: #1f333b;
+  --color-dark-border-strong: #35505a;
+  --color-dark-ink: #eef6f7;
+  --color-dark-ink-muted: #a9bcc1;
+  --color-dark-ink-faint: #6f868c;
 
   --font-sans: var(--font-mulish), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-poppins), var(--font-mulish), sans-serif;
@@ -94,6 +105,13 @@
     var(--color-cyan) 0%,
     var(--color-cyan-vivid) 100%
   );
+  --gradient-wordmark-dark: linear-gradient(
+    135deg,
+    var(--color-teal) 0%,
+    var(--color-accent-bright) 35%,
+    var(--color-cyan) 70%,
+    var(--color-cyan-vivid) 100%
+  );
   --gradient-button: linear-gradient(
     90deg,
     var(--color-cyan) 0%,
@@ -116,6 +134,17 @@
     var(--color-slate) 40%,
     var(--color-cyan) 100%
   );
+  --gradient-hero-dark: radial-gradient(
+    120% 90% at 85% 10%,
+    color-mix(in srgb, var(--color-cyan) 22%, transparent) 0%,
+    color-mix(in srgb, var(--color-teal) 16%, transparent) 45%,
+    var(--color-dark-bg) 100%
+  );
+  --gradient-works-dark: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-cyan) 14%, var(--color-dark-bg)) 0%,
+    color-mix(in srgb, var(--color-teal) 10%, var(--color-dark-bg)) 100%
+  );
 }
 
 @utility bg-brand {
@@ -130,12 +159,24 @@
   background-image: var(--gradient-accent);
 }
 
+@utility bg-wordmark-dark {
+  background-image: var(--gradient-wordmark-dark);
+}
+
 @utility bg-hero {
   background-image: var(--gradient-hero);
 }
 
+@utility bg-hero-dark {
+  background-image: var(--gradient-hero-dark);
+}
+
 @utility bg-works {
   background-image: var(--gradient-works);
+}
+
+@utility bg-works-dark {
+  background-image: var(--gradient-works-dark);
 }
 
 @utility bg-contact {
@@ -152,6 +193,14 @@
     color: var(--color-gray-600);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  [data-theme="dark"] body {
+    background: var(--color-dark-bg);
+    color: var(--color-dark-ink-muted);
   }
 
   :focus-visible {

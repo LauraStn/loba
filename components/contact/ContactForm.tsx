@@ -82,11 +82,11 @@ export const ContactForm = ({ labels }: ContactFormProps) => {
 
   if (status === "success") {
     return (
-      <div className="grid content-center gap-2 rounded-surface bg-white p-7 shadow-panel">
-        <p className="font-display text-card font-bold text-navy" role="status">
+      <div className="grid content-center gap-2 rounded-surface border border-transparent bg-white p-7 shadow-panel dark:border-dark-border-strong dark:bg-dark-surface-alt">
+        <p className="font-display text-card font-bold text-navy dark:text-dark-ink" role="status">
           {labels.success.title}
         </p>
-        <p className="text-body text-gray-600">{labels.success.body}</p>
+        <p className="text-body text-gray-600 dark:text-dark-ink-muted">{labels.success.body}</p>
       </div>
     );
   }
@@ -95,9 +95,9 @@ export const ContactForm = ({ labels }: ContactFormProps) => {
     <form
       noValidate
       onSubmit={submitForm}
-      className="grid gap-3.5 rounded-surface bg-white p-7 shadow-panel"
+      className="grid gap-3.5 rounded-surface border border-transparent bg-white p-7 shadow-panel dark:border-dark-border-strong dark:bg-dark-surface-alt"
     >
-      <p className="text-micro text-gray-500">
+      <p className="text-micro text-gray-500 dark:text-dark-ink-faint">
         <span aria-hidden="true" className="font-bold text-danger">
           *
         </span>{" "}
@@ -177,19 +177,19 @@ export const ContactForm = ({ labels }: ContactFormProps) => {
       {status === "error" ? (
         <p
           role="alert"
-          className="rounded-field bg-danger/[0.07] px-3.5 py-3 text-micro text-gray-700"
+          className="rounded-field bg-danger/[0.07] px-3.5 py-3 text-micro text-gray-700 dark:bg-danger/[0.15] dark:text-dark-ink-muted"
         >
           {labels.networkError}{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="font-bold text-accent underline"
+            className="font-bold text-accent underline dark:text-cyan"
           >
             {CONTACT_EMAIL}
           </a>
         </p>
       ) : null}
 
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
         {isSubmitting ? labels.submitting : labels.submit}
       </Button>
     </form>

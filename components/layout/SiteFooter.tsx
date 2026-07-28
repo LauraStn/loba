@@ -11,19 +11,19 @@ type SiteFooterProps = {
 export const SiteFooter = ({ labels }: SiteFooterProps) => (
   <footer>
     <div
-      className={`${CONTAINER_CLASS} flex flex-col gap-4 py-8 text-meta text-gray-500 md:flex-row md:items-center md:justify-between`}
+      className={`${CONTAINER_CLASS} flex flex-col gap-4 py-8 text-meta text-gray-500 dark:text-dark-ink-faint md:flex-row md:items-center md:justify-between`}
     >
       <p>{labels.copyright}</p>
       <div className="flex gap-6">
         <Link
           href={`#${SECTION_IDS.contact}`}
-          className="transition-colors hover:text-navy"
+          className="transition-colors hover:text-navy dark:hover:text-dark-ink"
         >
           {labels.contact}
         </Link>
         <Link
           href={`#${SECTION_IDS.contact}`}
-          className="transition-colors hover:text-navy"
+          className="transition-colors hover:text-navy dark:hover:text-dark-ink"
         >
           {labels.legal}
         </Link>

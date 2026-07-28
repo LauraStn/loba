@@ -12,20 +12,20 @@ type HeroSectionProps = {
 };
 
 export const HeroSection = ({ content }: HeroSectionProps) => (
-  <section className="bg-hero">
+  <section className="bg-hero dark:bg-hero-dark">
     <div
       className={`${CONTAINER_CLASS} grid min-h-dvh content-center items-center gap-14 pt-16 pb-16 md:pt-20 md:pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-26 lg:pb-24`}
     >
       <div>
-        <p className="text-micro font-bold tracking-[0.14em] uppercase text-accent">
+        <p className="text-micro font-bold tracking-[0.14em] uppercase text-accent dark:text-cyan">
           {content.eyebrow}
         </p>
-        <h1 className="mt-5 font-display text-display-sm font-extrabold text-balance text-navy md:text-display-md lg:text-display">
+        <h1 className="mt-5 font-display text-display-sm font-extrabold text-balance text-navy md:text-display-md lg:text-display dark:text-dark-ink">
           {content.titleBeforeAccent}
-          <span className="text-accent-bright">{content.titleAccent}</span>
+          <span className="text-accent-bright dark:text-cyan-vivid">{content.titleAccent}</span>
           {content.titleAfterAccent}
         </h1>
-        <p className="mt-6 max-w-[520px] text-lead text-pretty text-gray-600">
+        <p className="mt-6 max-w-[520px] text-lead text-pretty text-gray-600 dark:text-dark-ink-muted">
           {content.lead}
         </p>
         <div className="mt-9 flex flex-col gap-3.5 md:flex-row">
@@ -48,10 +48,10 @@ export const HeroSection = ({ content }: HeroSectionProps) => (
         <ul className="mt-13 flex flex-col gap-5 md:flex-row md:gap-10">
           {content.stats.map((stat) => (
             <li key={stat.label}>
-              <span className="block font-display text-stat font-extrabold text-navy">
+              <span className="block font-display text-stat font-extrabold text-navy dark:text-dark-ink">
                 {stat.value}
               </span>
-              <span className="mt-0.5 block text-meta text-gray-500">
+              <span className="mt-0.5 block text-meta text-gray-500 dark:text-dark-ink-faint">
                 {stat.label}
               </span>
             </li>
