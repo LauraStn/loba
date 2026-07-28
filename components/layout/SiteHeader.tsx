@@ -70,37 +70,35 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
 
   const localeSwitcher = (
     <div
-      className="flex items-center gap-1.5 text-micro font-bold"
+      className="flex items-center gap-1 rounded-pill border border-gray-200 bg-gray-50 p-1"
       role="group"
       aria-label={labels.languageLabel}
     >
-      {LOCALES.map((available, index) => (
-        <span key={available} className="flex items-center gap-1.5">
-          {index > 0 ? (
-            <span aria-hidden="true" className="text-gray-400">
-              ·
-            </span>
-          ) : null}
-          {available === locale ? (
-            <span aria-current="true" className="uppercase text-navy">
-              {available}
-            </span>
-          ) : (
-            <Link
-              href={`/${available}`}
-              onClick={switchLocaleKeepingAnchor}
-              className="uppercase text-gray-400 transition-colors hover:text-navy"
-            >
-              {available}
-            </Link>
-          )}
-        </span>
-      ))}
+      {LOCALES.map((available) =>
+        available === locale ? (
+          <span
+            key={available}
+            aria-current="true"
+            className="bg-accent rounded-pill px-2.5 py-1 text-micro font-bold uppercase text-white"
+          >
+            {available}
+          </span>
+        ) : (
+          <Link
+            key={available}
+            href={`/${available}`}
+            onClick={switchLocaleKeepingAnchor}
+            className="rounded-pill px-2.5 py-1 text-micro font-bold uppercase text-gray-600 transition-colors hover:text-navy"
+          >
+            {available}
+          </Link>
+        ),
+      )}
     </div>
   );
 
   const wordmark = (
-    <span className="bg-contact bg-clip-text font-display text-body font-semibold tracking-[0.14em] text-transparent">
+    <span className="bg-contact bg-clip-text font-display text-note font-semibold tracking-[0.14em] text-transparent">
       {labels.wordmark}
     </span>
   );
@@ -112,9 +110,7 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
           isScrolled ? "shadow-nav" : ""
         }`}
       >
-        <div
-          className={`${CONTAINER_CLASS} flex items-center justify-between py-5`}
-        >
+        <div className={`${CONTAINER_CLASS} flex items-center justify-between`}>
           <Link
             href={`/${locale}`}
             className="flex items-center gap-2.5"
@@ -126,41 +122,51 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
               width={747}
               height={818}
               priority
-              sizes="32px"
-              className="h-8 w-auto shrink-0"
+              sizes="80px"
+              className="h-16 w-auto shrink-0 md:h-20"
             />
-            {wordmark}
+            <span className="hidden sm:inline">{wordmark}</span>
           </Link>
 
           <nav
             aria-label={labels.ariaLabel}
-            className="hidden items-center gap-[30px] md:flex"
+            className="hidden items-center gap-5 md:flex"
           >
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-meta text-gray-600 transition-colors hover:text-navy"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="flex items-center gap-8">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group relative text-note font-semibold text-navy transition-colors hover:text-accent"
+                >
+                  {link.label}
+                  <span
+                    aria-hidden="true"
+                    className="bg-accent-surface absolute -bottom-1.5 left-0 h-0.5 w-0 rounded-pill transition-[width] duration-200 ease-out group-hover:w-full"
+                  />
+                </Link>
+              ))}
+            </div>
+
+            <span aria-hidden="true" className="h-6 w-px bg-gray-200" />
+
             {localeSwitcher}
-            <ButtonLink href={`#${SECTION_IDS.contact}`} size="sm">
+
+            <ButtonLink href={`#${SECTION_IDS.contact}`} size="md">
               {labels.cta}
             </ButtonLink>
           </nav>
 
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             {localeSwitcher}
             <button
               type="button"
               onClick={() => setIsMenuOpen(true)}
               aria-label={labels.openMenu}
               aria-expanded={isMenuOpen}
-              className="grid size-11 place-items-center text-navy"
+              className="grid size-11 place-items-center rounded-field text-navy transition-colors hover:bg-accent/[0.07]"
             >
-              <Menu size={22} strokeWidth={2} aria-hidden="true" />
+              <Menu size={24} strokeWidth={2.25} aria-hidden="true" />
             </button>
           </div>
         </div>
