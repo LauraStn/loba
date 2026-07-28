@@ -20,6 +20,8 @@ export const sendContactMessage = async (
   const parsed = contactSchema.safeParse({
     name: readField(formData, "name"),
     email: readField(formData, "email"),
+    company: readField(formData, "company"),
+    phone: readField(formData, "phone"),
     message: readField(formData, "message"),
   });
 

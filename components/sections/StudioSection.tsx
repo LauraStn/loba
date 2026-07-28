@@ -6,7 +6,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 const PORTRAITS = ["/images/portrait-1.jpg", "/images/portrait-2.jpg"];
 
-const TITLE_ID = "atelier-title";
+const TITLE_ID = "studio-title";
 
 type StudioSectionProps = {
   content: Dictionary["studio"];
@@ -19,7 +19,7 @@ export const StudioSection = ({ content }: StudioSectionProps) => (
     className="scroll-mt-21 border-b border-gray-200 bg-gray-50"
   >
     <div
-      className={`${CONTAINER_CLASS} grid items-center gap-14 py-16 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:py-24`}
+      className={`${CONTAINER_CLASS} grid min-h-dvh content-center items-center gap-14 py-16 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:py-24`}
     >
       <div className="flex items-start gap-4.5 max-lg:order-2 md:max-w-[340px] lg:max-w-none">
         {PORTRAITS.map((portrait, index) => (

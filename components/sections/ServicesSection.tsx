@@ -42,16 +42,18 @@ export const ServicesSection = ({ content }: ServicesSectionProps) => (
   <section
     id={SECTION_IDS.services}
     aria-labelledby={TITLE_ID}
-    className="scroll-mt-21 border-y border-gray-200 bg-gray-50"
+    className="scroll-mt-21 border-y border-gray-200 bg-contact"
   >
-    <div className={`${CONTAINER_CLASS} py-16 md:py-20 lg:py-24`}>
+    <div
+      className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
+    >
       <h2
         id={TITLE_ID}
-        className="font-display text-heading-sm font-extrabold text-navy md:text-heading"
+        className="font-display text-heading-sm font-extrabold text-white md:text-heading"
       >
         {content.title}
       </h2>
-      <p className="mt-3 max-w-[560px] text-intro text-pretty text-gray-600">
+      <p className="mt-3 max-w-[560px] text-intro text-pretty text-white/80">
         {content.lead}
       </p>
       <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

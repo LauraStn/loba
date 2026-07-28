@@ -15,7 +15,13 @@ import {
   type ContactValues,
 } from "@/lib/contact/schema";
 
-const EMPTY_VALUES: ContactValues = { name: "", email: "", message: "" };
+const EMPTY_VALUES: ContactValues = {
+  name: "",
+  email: "",
+  company: "",
+  phone: "",
+  message: "",
+};
 
 type FormStatus = "idle" | "success" | "error";
 
@@ -91,11 +97,18 @@ export const ContactForm = ({ labels }: ContactFormProps) => {
       onSubmit={submitForm}
       className="grid gap-3.5 rounded-surface bg-white p-7 shadow-panel"
     >
+      <p className="text-micro text-gray-500">
+        <span aria-hidden="true" className="font-bold text-danger">
+          *
+        </span>{" "}
+        {labels.requiredNote}
+      </p>
       <div className="grid gap-3.5 md:grid-cols-2">
         <TextField
           id="contact-name"
           name="name"
           label={labels.name}
+          required
           autoComplete="name"
           value={values.name}
           error={errorFor("name")}
@@ -107,17 +120,42 @@ export const ContactForm = ({ labels }: ContactFormProps) => {
           name="email"
           type="email"
           label={labels.email}
+          required
           autoComplete="email"
           value={values.email}
           error={errorFor("email")}
           onChange={(event) => updateValue("email", event.target.value)}
           onBlur={() => validateOnBlur("email")}
         />
+        <TextField
+          id="contact-company"
+          name="company"
+          label={labels.company}
+          optionalText={labels.optional}
+          autoComplete="organization"
+          value={values.company}
+          error={errorFor("company")}
+          onChange={(event) => updateValue("company", event.target.value)}
+          onBlur={() => validateOnBlur("company")}
+        />
+        <TextField
+          id="contact-phone"
+          name="phone"
+          type="tel"
+          label={labels.phone}
+          optionalText={labels.optional}
+          autoComplete="tel"
+          value={values.phone}
+          error={errorFor("phone")}
+          onChange={(event) => updateValue("phone", event.target.value)}
+          onBlur={() => validateOnBlur("phone")}
+        />
       </div>
       <TextAreaField
         id="contact-message"
         name="message"
         label={labels.message}
+        required
         value={values.message}
         error={errorFor("message")}
         onChange={(event) => updateValue("message", event.target.value)}

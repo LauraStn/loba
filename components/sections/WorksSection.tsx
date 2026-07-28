@@ -19,7 +19,9 @@ export const WorksSection = ({ content }: WorksSectionProps) => (
     aria-labelledby={TITLE_ID}
     className="bg-works scroll-mt-21 border-b border-gray-200"
   >
-    <div className={`${CONTAINER_CLASS} py-16 md:py-20 lg:py-24`}>
+    <div
+      className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
+    >
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <h2
           id={TITLE_ID}

@@ -15,7 +15,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
   primary:
     "bg-button text-navy shadow-cta hover:brightness-[0.95] hover:shadow-cta-hover",
   secondary:
-    "border border-gray-200 bg-white text-navy hover:bg-accent/[0.07]",
+    "border-2 border-accent bg-white text-accent hover:bg-accent/[0.07]",
   ghost: "text-accent hover:bg-accent/[0.07]",
 };
 

@@ -5,7 +5,7 @@ import { CONTAINER_CLASS } from "@/components/ui/container-styles";
 import { SECTION_IDS } from "@/content/site";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-const HERO_IMAGE = "/images/hero-atelier.jpg";
+const HERO_IMAGE = "/images/hero-studio.jpg";
 
 type HeroSectionProps = {
   content: Dictionary["hero"];
@@ -14,7 +14,7 @@ type HeroSectionProps = {
 export const HeroSection = ({ content }: HeroSectionProps) => (
   <section className="bg-hero">
     <div
-      className={`${CONTAINER_CLASS} grid items-center gap-14 pt-16 pb-16 md:pt-20 md:pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-26 lg:pb-24`}
+      className={`${CONTAINER_CLASS} grid min-h-dvh content-center items-center gap-14 pt-16 pb-16 md:pt-20 md:pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-26 lg:pb-24`}
     >
       <div>
         <p className="text-micro font-bold tracking-[0.14em] uppercase text-accent">
@@ -38,7 +38,7 @@ export const HeroSection = ({ content }: HeroSectionProps) => (
           </ButtonLink>
           <ButtonLink
             href={`#${SECTION_IDS.works}`}
-            variant="ghost"
+            variant="secondary"
             size="lg"
             className="max-md:w-full"
           >
@@ -60,7 +60,7 @@ export const HeroSection = ({ content }: HeroSectionProps) => (
       </div>
 
       <div className="bg-brand relative h-[300px] rounded-surface md:h-auto md:aspect-[3/2]">
-        <div className="absolute inset-[18px] overflow-hidden rounded-frame md:inset-7">
+        <div className="absolute inset-[18px] overflow-hidden rounded-frame md:inset-8">
           <Image
             src={HERO_IMAGE}
             alt={content.imageAlt}

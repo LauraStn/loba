@@ -49,7 +49,7 @@ export const generateMetadata = async ({
       title: meta.title,
       description: meta.description,
       url: `/${locale}`,
-      images: [{ url: "/images/hero-atelier.jpg", width: 1200, height: 800 }],
+      images: [{ url: "/images/hero-studio.jpg", width: 1200, height: 800 }],
     },
   };
 };

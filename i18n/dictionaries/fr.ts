@@ -1,15 +1,15 @@
 export const fr = {
   meta: {
-    title: "Atelier Rivage — studio de développement web à deux",
+    title: "Astralya Studio — studio de développement web à deux",
     description:
       "Sites vitrines, boutiques en ligne et applications métier, du premier croquis à la mise en ligne. Deux développeurs, sans intermédiaire.",
   },
   nav: {
-    brand: "Atelier Rivage",
-    wordmark: "ATELIER RIVAGE",
+    brand: "Astralya Studio",
+    wordmark: "ASTRALYA STUDIO",
     services: "Savoir-faire",
     works: "Réalisations",
-    studio: "L’atelier",
+    studio: "Le studio",
     cta: "Parlons-en",
     ariaLabel: "Navigation principale",
     languageLabel: "Langue",
@@ -24,8 +24,8 @@ export const fr = {
     titleAfterAccent: " du code.",
     lead: "Sites vitrines, boutiques en ligne, applications métier. Nous prenons le projet du premier croquis jusqu’à la mise en ligne — et nous restons joignables après.",
     primaryCta: "Décrire mon projet",
-    secondaryCta: "Voir nos travaux",
-    imageAlt: "Les deux développeurs de l’atelier au travail sur leurs postes",
+    secondaryCta: "Voir nos réalisations",
+    imageAlt: "Les deux développeurs du studio au travail sur leurs postes",
     stats: [
       { value: "48 h", label: "pour un premier retour" },
       { value: "2", label: "interlocuteurs, sans intermédiaire" },
@@ -90,21 +90,21 @@ export const fr = {
     },
   },
   studio: {
-    title: "L’atelier, c’est nous deux",
+    title: "Le studio, c’est nous deux",
     paragraphs: [
-      "Deux développeurs, en couple à la ville et associés à l’atelier. Pas de commercial, pas de chef de projet intermédiaire : vous parlez directement aux personnes qui écrivent le code de votre projet.",
+      "Deux développeurs, en couple à la ville et associés au studio. Pas de commercial, pas de chef de projet intermédiaire : vous parlez directement aux personnes qui écrivent le code de votre projet.",
       "Nous prenons peu de projets à la fois, pour les mener correctement.",
     ],
     portraitAlts: [
-      "Portrait de la première associée de l’atelier",
-      "Portrait du second associé de l’atelier",
+      "Portrait de la première associée du studio",
+      "Portrait du second associé du studio",
     ],
     tags: [
       "TypeScript",
       "React",
       "Next.js",
       "Node",
-      "React Native",
+      "Flutter",
       "Figma",
     ],
   },
@@ -114,12 +114,19 @@ export const fr = {
     form: {
       name: "Nom",
       email: "Email",
+      company: "Entreprise",
+      phone: "Téléphone",
       message: "Votre projet",
+      optional: "facultatif",
+      requiredNote:
+        "Les champs suivis d’un astérisque sont obligatoires. Les autres nous aident simplement à mieux préparer notre réponse.",
       submit: "Envoyer",
       submitting: "Envoi…",
       errors: {
         name: "Indiquez votre nom (2 caractères minimum).",
         email: "Indiquez une adresse email valide.",
+        company: "Le nom de l’entreprise est trop long (120 caractères maximum).",
+        phone: "Ce numéro est trop long (30 caractères maximum).",
         message: "Décrivez votre projet en 20 caractères minimum.",
       },
       networkError: "L’envoi a échoué. Écrivez-nous directement à",
@@ -130,7 +137,7 @@ export const fr = {
     },
   },
   footer: {
-    copyright: "© 2026 Atelier Rivage",
+    copyright: "© 2026 Astralya Studio",
     contact: "Contact",
     legal: "Mentions légales",
   },

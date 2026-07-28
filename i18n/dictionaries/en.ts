@@ -2,13 +2,13 @@ import type { Dictionary } from "./fr";
 
 export const en = {
   meta: {
-    title: "Atelier Rivage — a two-person web development studio",
+    title: "Astralya Studio — a two-person web development studio",
     description:
       "Marketing sites, online shops and business applications, from the first sketch to going live. Two developers, no middlemen.",
   },
   nav: {
-    brand: "Atelier Rivage",
-    wordmark: "ATELIER RIVAGE",
+    brand: "Astralya Studio",
+    wordmark: "ASTRALYA STUDIO",
     services: "What we do",
     works: "Work",
     studio: "The studio",
@@ -26,7 +26,7 @@ export const en = {
     titleAfterAccent: " of code.",
     lead: "Marketing sites, online shops, business applications. We take the project from the first sketch all the way to launch — and we stay reachable afterwards.",
     primaryCta: "Tell us about your project",
-    secondaryCta: "See our work",
+    secondaryCta: "See our projects",
     imageAlt: "The studio’s two developers at work at their desks",
     stats: [
       { value: "48 h", label: "for a first answer" },
@@ -100,7 +100,7 @@ export const en = {
       "Portrait of the studio’s first partner",
       "Portrait of the studio’s second partner",
     ],
-    tags: ["TypeScript", "React", "Next.js", "Node", "React Native", "Figma"],
+    tags: ["TypeScript", "React", "Next.js", "Node", "Flutter", "Figma"],
   },
   contact: {
     title: "Tell us about your project.",
@@ -108,12 +108,19 @@ export const en = {
     form: {
       name: "Name",
       email: "Email",
+      company: "Company",
+      phone: "Phone",
       message: "Your project",
+      optional: "optional",
+      requiredNote:
+        "Fields marked with an asterisk are required. The others simply help us prepare a better answer.",
       submit: "Send",
       submitting: "Sending…",
       errors: {
         name: "Please enter your name (2 characters minimum).",
         email: "Please enter a valid email address.",
+        company: "This company name is too long (120 characters maximum).",
+        phone: "This phone number is too long (30 characters maximum).",
         message: "Please describe your project in 20 characters minimum.",
       },
       networkError: "Sending failed. Write to us directly at",
@@ -124,7 +131,7 @@ export const en = {
     },
   },
   footer: {
-    copyright: "© 2026 Atelier Rivage",
+    copyright: "© 2026 Astralya Studio",
     contact: "Contact",
     legal: "Legal notice",
   },

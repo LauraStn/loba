@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type MouseEvent } from "react";
@@ -12,6 +13,8 @@ import { LOCALES, otherLocale, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const STICKY_SHADOW_OFFSET = 8;
+
+const BRAND_MARK = "/images/logo2.png";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -97,7 +100,7 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
   );
 
   const wordmark = (
-    <span className="font-display text-body font-semibold tracking-[0.14em] text-navy">
+    <span className="bg-contact bg-clip-text font-display text-body font-semibold tracking-[0.14em] text-transparent">
       {labels.wordmark}
     </span>
   );
@@ -117,9 +120,14 @@ export const SiteHeader = ({ locale, labels }: SiteHeaderProps) => {
             className="flex items-center gap-2.5"
             aria-label={labels.brand}
           >
-            <span
-              aria-hidden="true"
-              className="bg-brand size-[26px] shrink-0 rounded-logo"
+            <Image
+              src={BRAND_MARK}
+              alt=""
+              width={747}
+              height={818}
+              priority
+              sizes="32px"
+              className="h-8 w-auto shrink-0"
             />
             {wordmark}
           </Link>

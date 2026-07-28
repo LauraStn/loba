@@ -1,23 +1,36 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import { ERROR_CLASS, LABEL_CLASS, fieldStyles } from "./field-styles";
+import { FieldLabel } from "./FieldLabel";
+import { ERROR_CLASS, fieldStyles } from "./field-styles";
 
 type TextFieldProps = Omit<ComponentPropsWithoutRef<"input">, "id"> & {
   id: string;
   label: string;
   error?: string;
+  optionalText?: string;
 };
 
-export const TextField = ({ id, label, error, ...props }: TextFieldProps) => {
+export const TextField = ({
+  id,
+  label,
+  error,
+  required,
+  optionalText,
+  ...props
+}: TextFieldProps) => {
   const errorId = `${id}-error`;
 
   return (
     <div>
-      <label htmlFor={id} className={LABEL_CLASS}>
-        {label}
-      </label>
+      <FieldLabel
+        htmlFor={id}
+        label={label}
+        required={required}
+        optionalText={optionalText}
+      />
       <input
         id={id}
+        required={required}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errorId : undefined}
         className={fieldStyles({
