@@ -16,7 +16,7 @@ export const ContactSection = ({ content }: ContactSectionProps) => (
     className="bg-contact scroll-mt-21"
   >
     <div
-      className={`${CONTAINER_CLASS} grid min-h-dvh content-center gap-10 py-16 md:py-20 lg:grid-cols-2 lg:gap-16 lg:py-22`}
+      className={`${CONTAINER_CLASS} grid content-center gap-10 py-16 md:py-20 lg:min-h-dvh lg:grid-cols-2 lg:gap-16 lg:py-22`}
     >
       <div>
         <h2

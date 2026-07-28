@@ -34,7 +34,7 @@ export const fr = {
     ],
   },
   services: {
-    title: "Ce que nous faisons",
+    title: "Ce que nous réalisons",
     lead: "Six prestations, un même fonctionnement : on cadre, on chiffre, on livre.",
     items: {
       showcase: {

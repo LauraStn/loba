@@ -20,7 +20,7 @@ export const WorksSection = ({ content }: WorksSectionProps) => (
     className="bg-works dark:bg-works-dark scroll-mt-21 border-b border-gray-200 dark:border-dark-border"
   >
     <div
-      className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
+      className={`${CONTAINER_CLASS} flex flex-col justify-center py-16 md:py-20 lg:min-h-dvh lg:py-24`}
     >
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <h2

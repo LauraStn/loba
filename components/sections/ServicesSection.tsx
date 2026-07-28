@@ -45,7 +45,7 @@ export const ServicesSection = ({ content }: ServicesSectionProps) => (
     className="scroll-mt-21 border-y border-gray-200 bg-contact dark:border-dark-border"
   >
     <div
-      className={`${CONTAINER_CLASS} flex min-h-dvh flex-col justify-center py-16 md:py-20 lg:py-24`}
+      className={`${CONTAINER_CLASS} flex flex-col justify-center py-16 md:py-20 lg:min-h-dvh lg:py-24`}
     >
       <h2
         id={TITLE_ID}

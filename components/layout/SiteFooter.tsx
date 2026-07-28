@@ -9,7 +9,7 @@ type SiteFooterProps = {
 };
 
 export const SiteFooter = ({ labels }: SiteFooterProps) => (
-  <footer>
+  <footer className="border-t border-gray-200 dark:border-dark-border">
     <div
       className={`${CONTAINER_CLASS} flex flex-col gap-4 py-8 text-meta text-gray-500 dark:text-dark-ink-faint md:flex-row md:items-center md:justify-between`}
     >

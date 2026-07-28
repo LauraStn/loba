@@ -14,7 +14,7 @@ type HeroSectionProps = {
 export const HeroSection = ({ content }: HeroSectionProps) => (
   <section className="bg-hero dark:bg-hero-dark">
     <div
-      className={`${CONTAINER_CLASS} grid min-h-dvh content-center items-center gap-14 pt-16 pb-16 md:pt-20 md:pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:pt-26 lg:pb-24`}
+      className={`${CONTAINER_CLASS} grid content-center items-center gap-14 pt-16 pb-16 md:pt-20 md:pb-20 lg:min-h-dvh lg:grid-cols-[1.15fr_0.85fr] lg:pt-26 lg:pb-24`}
     >
       <div>
         <p className="text-micro font-bold tracking-[0.14em] uppercase text-accent dark:text-cyan">
@@ -45,13 +45,13 @@ export const HeroSection = ({ content }: HeroSectionProps) => (
             {content.secondaryCta}
           </ButtonLink>
         </div>
-        <ul className="mt-13 flex flex-col gap-5 md:flex-row md:gap-10">
+        <ul className="mt-8 grid grid-cols-3 divide-x divide-gray-200 lg:mt-11 dark:divide-dark-border">
           {content.stats.map((stat) => (
-            <li key={stat.label}>
-              <span className="block font-display text-stat font-extrabold text-navy dark:text-dark-ink">
+            <li key={stat.label} className="px-2.5 first:pl-0 lg:px-6">
+              <span className="block font-display text-card font-extrabold text-navy lg:text-stat dark:text-dark-ink">
                 {stat.value}
               </span>
-              <span className="mt-0.5 block text-meta text-gray-500 dark:text-dark-ink-faint">
+              <span className="mt-0.5 block text-micro text-gray-500 lg:text-meta dark:text-dark-ink-faint">
                 {stat.label}
               </span>
             </li>
@@ -59,7 +59,7 @@ export const HeroSection = ({ content }: HeroSectionProps) => (
         </ul>
       </div>
 
-      <div className="bg-brand relative h-[300px] rounded-surface md:h-auto md:aspect-[3/2]">
+      <div className="bg-brand relative order-first h-[300px] rounded-surface md:h-auto md:aspect-[3/2] lg:order-none">
         <div className="absolute inset-[18px] overflow-hidden rounded-frame md:inset-8">
           <Image
             src={HERO_IMAGE}
